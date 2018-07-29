@@ -1,0 +1,41 @@
+<section>
+        <h1>{{date}}</h1>
+        <h2>{{sportComplex.name}}</h2>
+        <h2>{{user.name}} {{user.lastname}}</h2>
+        <h2>{{field}}</h2>
+        <h2>Email: {{email}}</h2>
+        <h2>Descripción: {{description}}</h2>
+        <h2>Calificación: {{qualification}}</h2>
+        <h2>Cantidad de Canchas: {{fields}}</h2>
+        <table class="table table-striped table-responsive">
+            <tr>
+                <td class="title active">Resultado</td>
+                <td>{{score}}</td>
+            </tr>
+            <tr>
+                <td class="title active">Tiempo de juego</td>
+                
+                <td>{{minutes}}:{{seconds}}</td>
+            </tr>
+            <tr>
+                <td class="title active">Estadio</td>
+                <td>{{stadium}}</td>
+            </tr>
+        </table>
+        <h3>Resumen del partido</h3>
+        <table class="table table-striped table-responsive resumen">
+            <tr>
+                <th>Tiempo</th>
+                <th>Equipo Ejecutor</th>
+                <th>Acción</th>
+            </tr>
+            <tr *ngFor="let event of events">
+                <td>{{event.time}}</td>
+                <td>{{event.executor.name}}</td>
+                <td>{{event.description}}</td>
+            </tr>
+        </table>
+    <p>
+        <input id="back" class="btn btn-primary col-lg-offset-4" type="button" value="Regresar" onClick="javascript:history.back();">
+    </p>
+</section>

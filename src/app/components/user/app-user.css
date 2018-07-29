@@ -1,0 +1,16 @@
+h2{
+    text-align: center;
+}
+
+td.title{
+    text-align: right;
+    font-weight: bold;
+}
+
+table{
+    font-size: 20px;
+}
+
+.resumen{
+    font-size: 15px;
+}

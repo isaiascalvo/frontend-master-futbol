@@ -1,0 +1,34 @@
+<section>
+    <h1>Complejos de Futbol 5</h1>
+    <ul>   
+        <li *ngFor="let sportComplex of sportComplexes">
+            <app-sportComplex [idI]="sportComplex._id"></app-sportComplex>
+            <div class="row">
+                <!--
+                <span class="col-md-4 col-lg-4 team">{{sportComplex.name}}</span>
+                <span class="col-md-4 col-lg-4 team">{{sportComplex.city}} - {{sportComplex.address}}</span>
+                <span class="col-md-4 col-lg-4 team ">Descripción: {{sportComplex.description}}</span>
+                <span class="col-md-8 col-lg-8 team">Email: {{sportComplex.email}} Teléfono:{{sportComplex.phone}}</span>
+                <span class="col-md-4 col-lg-4 team">Calificación: {{sportComplex.qualification}}</span>
+                <span class="col-md-4 col-lg-4 team">Hora de Apertura: {{sportComplex.Openning}}</span>
+                <span class="col-md-4 col-lg-4 team ">Hora de Cierre: {{sportComplex.Closing}}</span>
+                <span class="col-md-4 col-lg-4 team">Cantidad de Canchas: {{sportComplex.fields}}</span>
+                -->
+                <ul>
+                    <li *ngFor="let reservation of reservations">
+                        <span class="col-md-4 col-lg-4 team">{{reservation.user}}</span>
+                        <span class="col-md-4 col-lg-4 team">{{reservation.field}}</span>
+                        <span class="col-md-4 col-lg-4 team">{{reservation.date}}</span>
+                    </li>
+                </ul>
+                <span class="col-md-offset-11 col-lg-offset-11" >
+                    <a [routerLink]="['/detailsSportComplex', sportComplex._id]" routerLinkActive="active">
+                        <button class="details  col-md-3 col-lg-3">Ver</button>
+                    </a>
+                </span>               
+                
+            </div>
+            <!--<div class="time ">{{match.minutes}}:{{match.seconds}}</div>-->
+        </li>
+    </ul>
+</section>

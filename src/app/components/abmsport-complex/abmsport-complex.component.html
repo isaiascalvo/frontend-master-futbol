@@ -1,0 +1,95 @@
+<nav class="nav-wrapper blue">
+    <div class="container">
+        <ul class="right hide-on-med-and-down">
+            <li><a [routerLink]="['/home']" routerLinkActive="active" class="">Inicio</a></li>
+            <li class="active"><a [routerLink]="['/perfilSc', _id]" routerLinkActive="active" class="">Perfil</a></li>
+            <li><a [routerLink]="['/myResSc', _id]" routerLinkActive="active" class="">Mis Reservas</a></li>
+            <li><a [routerLink]="['/home']" routerLinkActive="active" class="">Salir</a></li>
+        </ul>      
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col s6">
+            <div class="card">
+                <div class="card-content">
+                    <form #scForm="ngForm" (ngSubmit)="addSC(scForm)">
+                        <div class="row">
+                            <div class="hide">
+                                <input type="text" name="_id" #id="ngModel" 
+                                [(ngModel)]="_id">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="name" #nameText="ngModel" 
+                                [(ngModel)]="name" 
+                                placeholder="Ingrese el nombre de su complejo">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="username" #usernameText="ngModel" 
+                                [(ngModel)]="username" 
+                                placeholder="Ingresa un Nombre de Usuario">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="password" name="password" #passwordText="ngModel" 
+                                [(ngModel)]="password" 
+                                placeholder="Ingresa Contraseña">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="password" name="password_confirmation" #passwordConfirmationText="ngModel" 
+                                [(ngModel)]="password_confirmation" 
+                                placeholder="Confirma la Contraseña">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="email" #emailText="ngModel" 
+                                [(ngModel)]="email" 
+                                placeholder="Ingresa tu Email">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="city" #cityText="ngModel" 
+                                [(ngModel)]="city" 
+                                placeholder="Ingrese la ciudad donde está ubicado">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="address" #addressText="ngModel" 
+                                [(ngModel)]="address" 
+                                placeholder="Ingrese la dirección">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="phone" #phoneText="ngModel" 
+                                [(ngModel)]="phone" 
+                                placeholder="Ingresa tu teléfono">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="number" name="fields" #fieldsText="ngModel" 
+                                [(ngModel)]="fields" 
+                                placeholder="Indique la cantidad de canchas que posee su complejo">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="description" #descriptionText="ngModel" 
+                                [(ngModel)]="description" 
+                                placeholder="Ingrese una descripción de su complejo">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="time" name="openning" #openningText="ngModel" 
+                                [(ngModel)]="openning" 
+                                placeholder="Indique la hora de apertura de su complejo">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="time" name="closing" #closingText="ngModel" 
+                                [(ngModel)]="closing" 
+                                placeholder="Indique la hora de cierre de su complejo">
+                            </div>
+                            <div class="card-action">
+                                <div class="input-field col s12">
+                                    <button class="btn right" style="margin-left:2px;" (click)="resetForm(scForm)">Limpiar</button>
+                                    <button class="btn right">Guardar</button>
+                                    <!--<input class="btn right" type="submit" value="Guardar">-->
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<section>
+        <h4>{{name}}</h4>
+        <h5>{{city}} - {{address}}</h5>
+        <h5>Calificación: {{qualification}}</h5>
+        <h5>Reservas:</h5>
+        <ul>
+            <li *ngFor="let reservation of reservations">
+                <span class="col-md-4 col-lg-4 team">{{reservation.user.name}} {{reservation.user.lastname}}</span>
+                <span class="col-md-4 col-lg-4 team">{{reservation.field}}</span>
+                <span class="col-md-4 col-lg-4 team">{{reservation.Date}}</span>
+            </li>
+        </ul>
+    <!--
+    <p>
+        <input id="back" class="btn btn-primary col-lg-offset-4" type="button" value="Regresar" onClick="javascript:history.back();">
+    </p>
+    -->
+</section>

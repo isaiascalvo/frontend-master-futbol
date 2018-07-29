@@ -1,0 +1,45 @@
+h1{
+    color: #009C00;
+    text-align: center;
+}
+
+.team{
+    background-color: #009688;
+    color: white;
+    height: 40px;
+    font-size: 25px;
+}
+
+.result{
+    background-color: black;
+    color: white;
+    height: 40px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.time{
+    font-size: 30px;
+    height: 40px;
+    background-color: #F9D632;
+}
+
+.details{
+    height: 40px;
+    width: 68px;
+    padding: 0px;
+    margin: 0px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+}
+
+section{
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+li {
+    list-style: none;
+    margin-bottom: 1px;
+}
