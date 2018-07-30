@@ -3,6 +3,13 @@
         <div class="col s6">
             <div class="card">
                 <div class="card-content">
+                    <div *ngIf="sessionActive();then content else other_content"></div> 
+                    <ng-template #content>
+                            <h4>Actualizar datos de perfil</h4>
+                    </ng-template>
+                    <ng-template #other_content>
+                            <h4>Registrarme</h4>
+                    </ng-template>
                     <form #userForm="ngForm">
                         <div class="row">
                             <div class="hide">
@@ -48,8 +55,13 @@
                             <div class="card-action">
                                 <div class="input-field col s12">
                                     <button class="btn right" style="margin-left:2px;" (click)="resetForm(userForm)">Limpiar</button>
-                                    <button class="btn right" (click)="addUser(userForm)">Guardar</button>
-                                    <!--<input class="btn right" type="submit" value="Guardar">-->
+                                    <div *ngIf="sessionActive();then content2 else other_content2"></div> 
+                                    <ng-template #content2>
+                                        <button class="btn right" (click)="addUser(userForm)">Guardar</button>
+                                    </ng-template>
+                                    <ng-template #other_content2>
+                                        <button class="btn right" (click)="addUser(userForm)">Registrarme</button>
+                                    </ng-template>
                                 </div>
                             </div>
                         </div>

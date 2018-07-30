@@ -15,6 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/app-footer';
 import { ABMsportComplexComponent } from './components/abmsport-complex/abmsport-complex.component';
 import { LoginComponent } from './components/login/login.component';
+import { RouterModule } from '@angular/router';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +30,15 @@ import { LoginComponent } from './components/login/login.component';
     DetailsSportComplex,
     FooterComponent,
     ABMsportComplexComponent,
-    LoginComponent
+    LoginComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   providers: [UserDataService],
   bootstrap: [AppComponent]

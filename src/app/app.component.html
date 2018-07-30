@@ -1,29 +1,5 @@
-<nav class="nav-wrapper blue">
-  <div class="container">
-    <a [routerLink]="['/home']" routerLinkActive="active" class="brand-logo">F5Gol</a> 
-    <ul class="right hide-on-med-and-down">
-        <li><a [routerLink]="['/home']" routerLinkActive="active" class="">Inicio</a></li>
-        <div *ngIf="sessionActive();then content else other_content"></div>    
-      <ng-template #content>
-        <div *ngIf="isUser();then content2 else other_content2"></div> 
-        <ng-template #content2>
-            <li><a [routerLink]="['/user']" routerLinkActive="active" class="">Perfil</a></li>
-            <li><a [routerLink]="['/myRes', _id]" routerLinkActive="active" class="">Mis Reservas</a></li>
-        </ng-template>
-        <ng-template #other_content2>
-            <li><a [routerLink]="['/sportComplex']" routerLinkActive="active" class="">Perfil</a></li>
-            <li><a [routerLink]="['/myResSc/:_id']" routerLinkActive="active" class="">Mis Reservas</a></li>
-        </ng-template>
-        <li><a [routerLink]="['/home']" routerLinkActive="active" class="" (click)="cerrarSesion()">Cerrar Sesión</a></li>
-      </ng-template>
-      <ng-template #other_content>
-        <li><a [routerLink]="['/login']" routerLinkActive="active" class="">Iniciar Sesión</a></li>
-      </ng-template>
-    </ul>
-  </div>         
-</nav>
 <div>
-  <!--<app-header></app-header>-->
+  <app-header></app-header>
   <!--<app-listmatches></app-listmatches>-->
   <router-outlet></router-outlet>
   <app-footer class="foooter"></app-footer>

@@ -1,4 +1,24 @@
-<section class="col-md-12 col-lg-12">
-    <img src="assets/images/logo_superliga2.png" alt="superliga logo" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-    <img src="assets/images/banner.PNG" alt="resultados.com" class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-</section>
+<nav class="nav-wrapper blue">
+    <div class="container">
+        <a [routerLink]="['/home']" class="brand-logo">F5Gol</a> 
+        <ul class="right hide-on-med-and-down">
+            <li><a [routerLink]="['/home']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a></li>
+            <div *ngIf="sessionActive();then content else other_content"></div>    
+        <ng-template #content>
+            <div *ngIf="isUser();then content2 else other_content2"></div> 
+            <ng-template #content2>
+                <li><a [routerLink]="['/user']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Perfil ({{username}})</a></li>
+                <li><a [routerLink]="['/myRes', _id]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Mis Reservas</a></li>
+            </ng-template>
+            <ng-template #other_content2>
+                <li><a [routerLink]="['/sportComplex']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Perfil ({{username}})</a></li>
+                <li><a [routerLink]="['/myResSc/:_id']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Mis Reservas</a></li>
+            </ng-template>
+            <li><a [routerLink]="['/home']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="cerrarSesion()">Cerrar Sesión</a></li>
+        </ng-template>
+        <ng-template #other_content>
+            <li><a [routerLink]="['/login']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Iniciar Sesión</a></li>
+        </ng-template>
+        </ul>
+    </div>         
+</nav>

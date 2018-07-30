@@ -123,4 +123,13 @@ export class UserComponent implements OnInit {
             //this.mds.selectedUser = new User();
         }
     }
+
+    sessionActive(){
+        if(sessionStorage._id!=null){
+          return true;
+        }
+        else{
+          return false;
+        } 
+    }
 }

@@ -123,8 +123,17 @@ export class ABMsportComplexComponent implements OnInit {
   }
   
   resetForm(form?: NgForm){
-      if(form){
-          form.reset();
-      }
+    if(form){
+        form.reset();
+    }
+  }
+
+  sessionActive(){
+    if(sessionStorage._id!=null){
+      return true;
+    }
+    else{
+      return false;
+    } 
   }
 }

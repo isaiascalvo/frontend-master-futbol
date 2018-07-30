@@ -8,6 +8,7 @@ import { SportComplexComponent } from './components/sportComplex/app-sportComple
 import { ReservationComponent } from './components/reservation/app-reservation';
 import { DetailsSportComplex } from './components/detailsSportComplex/app-detailsSportComplex';
 import { ListMatchesComponent} from './components/listmatches/app-listmatches';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 export const routes: Routes = [
     { 
@@ -65,12 +66,12 @@ export const routes: Routes = [
       path: 'reservation/:id',
       component: ReservationComponent
     },
-    /*
+    
     { 
       path: '**',
-      component: PageNotFoundComponent
+      component: NotFoundComponent
     }
-    */
+    
 ];
 
 @NgModule({
