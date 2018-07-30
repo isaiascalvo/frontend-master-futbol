@@ -39,6 +39,7 @@ export class ABMsportComplexComponent implements OnInit {
 
   ngOnInit() 
   {
+    /*
     this.sub = this.route.params.subscribe(params => {
       if(params['_id']){
           this.sub = this.route.params.subscribe(params => {
@@ -46,6 +47,10 @@ export class ABMsportComplexComponent implements OnInit {
           });
         }
       });
+    */
+    if(sessionStorage._id!=null){
+        this.getOneSC(sessionStorage._id);
+    }
   }
 
   getOneSC(id): void {
@@ -72,6 +77,10 @@ export class ABMsportComplexComponent implements OnInit {
   getSC(form): void {
     this.mds.getSC(form)
     .subscribe(response => {
+        sessionStorage._id=response.sportComplex._id;
+        sessionStorage.username=response.sportComplex.username;
+        sessionStorage.type='sc'
+        /*
         this._id = response.sportComplex._id;
         this.name = response.sportComplex.name;
         this.username = response.sportComplex.username;
@@ -85,7 +94,8 @@ export class ABMsportComplexComponent implements OnInit {
         this.qualification = response.sportComplex.qualification;
         this.openning = response.sportComplex.openning;
         this.closing = response.sportComplex.closing;
-        this.rr.navigate(['perfilSc/'+this._id]);
+        */
+        this.rr.navigate(['home']);
     })
   };
 
@@ -111,7 +121,7 @@ export class ABMsportComplexComponent implements OnInit {
         });
     }
   }
-
+  
   resetForm(form?: NgForm){
       if(form){
           form.reset();

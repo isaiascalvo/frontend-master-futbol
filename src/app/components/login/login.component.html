@@ -1,33 +1,25 @@
-<nav class="nav-wrapper blue">
-    <div class="container">
-        <ul class="right hide-on-med-and-down">
-            <li><a [routerLink]="['/home']" routerLinkActive="active" class="">Inicio</a></li>
-            <li class="active"><a [routerLink]="['/login']" routerLinkActive="active" class="">Iniciar Sesión</a></li>
-        </ul>      
-    </div>
-</nav>
 <div class="container">
     <div class="row">
         <div class="col s6">
           <p>Iniciar sesión como Usuario</p>
           <div class="card">
               <div class="card-content">
-                  <form #scForm="ngForm" (ngSubmit)="addSC(scForm)">
+                  <form #userForm="ngForm">
                       <div class="row">
                           <div class="input-field col s12">
                               <input type="text" name="username" #usernameText="ngModel" 
-                              [(ngModel)]="username" 
+                              [(ngModel)]="usernameUser" 
                               placeholder="Ingresa un Nombre de Usuario">
                           </div>
                           <div class="input-field col s12">
                               <input type="password" name="password" #passwordText="ngModel" 
-                              [(ngModel)]="password" 
+                              [(ngModel)]="passwordUser" 
                               placeholder="Ingresa Contraseña">
                           </div>
                           <div class="card-action">
                             <div class="input-field col s12">
                                 <button class="btn right" style="margin-left:2px;" >Ovidé mi contraseña</button>
-                                <button class="btn right">Entrar</button>
+                                <button class="btn right" (click)="logUser(userForm)">Entrar</button>
                                 <!--<input class="btn right" type="submit" value="Guardar">-->
                             </div>
                           </div>
@@ -40,22 +32,22 @@
             <p>Iniciar sesión como Complejo de futbol</p>
             <div class="card">
                 <div class="card-content">
-                    <form #scForm="ngForm" (ngSubmit)="addSC(scForm)">
+                    <form #scForm="ngForm">
                         <div class="row">
                             <div class="input-field col s12">
                                 <input type="text" name="username" #usernameText="ngModel" 
-                                [(ngModel)]="username" 
+                                [(ngModel)]="usernameSC" 
                                 placeholder="Ingresa un Nombre de Usuario">
                             </div>
                             <div class="input-field col s12">
                                 <input type="password" name="password" #passwordText="ngModel" 
-                                [(ngModel)]="password" 
+                                [(ngModel)]="passwordSC" 
                                 placeholder="Ingresa Contraseña">
                             </div>
                             <div class="card-action">
                                 <div class="input-field col s12">
                                     <button class="btn right" style="margin-left:2px;">Ovidé mi contraseña</button>
-                                    <button class="btn right">Entrar</button>
+                                    <button class="btn right" (click)="logSC(scForm)">Entrar</button>
                                     <!--<input class="btn right" type="submit" value="Guardar">-->
                                 </div>
                             </div>

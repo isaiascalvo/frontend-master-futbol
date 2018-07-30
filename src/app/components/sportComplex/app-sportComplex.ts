@@ -5,7 +5,7 @@ import { UserDataService } from '../../services/app-userdataservice';
 import 'rxjs/add/operator/map';
 import { ActivatedRoute } from '@angular/router';
 import { ReservationComponent } from '../reservation/app-reservation';
-import * as moment from 'moment';
+//import * as moment from 'moment';
 //var moment = require('moment');
 
 //moment().format();

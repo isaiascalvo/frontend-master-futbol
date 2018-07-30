@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ReservationComponent } from '../reservation/app-reservation';
 import {NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
-import * as moment from 'moment';
+//import * as moment from 'moment';
 //var moment = require('moment');
 
 declare var M:any;
@@ -36,14 +36,18 @@ export class UserComponent implements OnInit {
 
     constructor(http: Http, private route: ActivatedRoute, private mds: UserDataService, private rr: Router) { }
 
-    ngOnInit() {        
+    ngOnInit() {     
+        /*   
         this.sub = this.route.params.subscribe(params => {
             if(params['_id']){
                 this.getOneUser(params['_id']);
                 //this.getUserReservations(params['_id']);
             }
         });
-        
+        */
+        if(sessionStorage._id!=null){
+            this.getOneUser(sessionStorage._id);
+        }
     }
 
     /*
@@ -73,7 +77,10 @@ export class UserComponent implements OnInit {
     getUser(form): void {
         this.mds.getUser(form)
         .subscribe(response => {
-            console.log("2->->"+response.user._id);
+            sessionStorage._id=response.user._id;
+            sessionStorage.username=response.user.username;
+            sessionStorage.type='user'
+            /*
             this._id = response.user._id;
             this.name = response.user.name;
             this.lastname = response.user.lastname;
@@ -83,7 +90,8 @@ export class UserComponent implements OnInit {
             //this.password = response.user.password;
             //this.password_confirmation = response.user.password_confirmation;
             this.username = response.user.username;
-            this.rr.navigate(['perfil/'+this._id]);
+            */
+            this.rr.navigate(['home']);
         })
     };
 
@@ -108,11 +116,7 @@ export class UserComponent implements OnInit {
             });
         }
     }
-
-    editUser(){
-         
-    }
-
+    
     resetForm(form?: NgForm){
         if(form){
             form.reset();

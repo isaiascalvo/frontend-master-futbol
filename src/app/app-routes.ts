@@ -23,11 +23,13 @@ export const routes: Routes = [
       path: 'login',
       component: LoginComponent,
     },
+    /*
     //perfil usuario
     { 
       path: 'perfil/:_id',
       component: UserComponent,
     },
+    */
     //registro usuario
     { 
       path: 'user',
@@ -43,11 +45,13 @@ export const routes: Routes = [
       path: 'detailsSportComplex/:_id',
       component: DetailsSportComplex,
     },
+    /*
     //perfil de un sportComplex(para que él mismo vea sus detalles y pueda editar)
     { 
       path: 'perfilSc/:_id',
       component: ABMsportComplexComponent,
     },
+    */
     {
       path: 'sportComplex',
       component: ABMsportComplexComponent,
