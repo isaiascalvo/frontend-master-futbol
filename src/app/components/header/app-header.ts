@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit {
   sessionActive(){
     
     this.username=sessionStorage.username;
+    
     if(sessionStorage._id!=null){
       return true;
     }
